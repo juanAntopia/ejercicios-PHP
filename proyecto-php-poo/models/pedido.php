@@ -217,6 +217,16 @@ class Pedido{
         return $pedido->fetch_object();
     }
 
+    public function getAllByUser(){
+        $sql = "SELECT p.* FROM pedidos p "
+        //."INNER JOIN lineaspedidos lp ON lp.pedido_id = p.id "
+        ." WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC;";
+        
+        $pedido = $this->db->query($sql);
+
+        return $pedido;
+    }
+
     public function getProductosByPedido($id){
         //$sql = "SELECT * FROM productos WHERE id IN (SELECT producto_id FROM lineaspedidos WHERE pedido_id = {$id})";
 
