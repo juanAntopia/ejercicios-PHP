@@ -77,4 +77,25 @@ class pedidoController
 
         require_once 'views/pedido/misPedidos.php';
     }
+
+    public function detalle(){
+        Utils::isIdentity();
+
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+
+            //sacar el pedido
+            $pedido = new Pedido();
+            $pedido->setId($id);
+            $pedido = $pedido->getOne();
+
+            //sacar los productos
+            $productos_pedido = new Pedido();
+            $productos = $productos_pedido->getProductosByPedido($id);
+
+            require_once 'views/pedido/detalle.php';
+        }else{
+            header('Location:'.base_url.'pedido/misPedidos');
+        }
+    }
 }//final de la clase
