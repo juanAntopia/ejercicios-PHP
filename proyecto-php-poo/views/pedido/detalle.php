@@ -1,6 +1,6 @@
 <h1>Mis pedidos</h1>
 
-<?php if (isset($_SESSION['pedido'])) : ?>
+<?php if (isset($pedido)) : ?>
 <h3>Dirección de envío</h3>
 Provincia: <?= $pedido->provincia ?><br>
 Ciudad: <?= $pedido->localidad ?><br>
