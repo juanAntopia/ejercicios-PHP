@@ -98,4 +98,35 @@ class pedidoController
             header('Location:'.base_url.'pedido/misPedidos');
         }
     }
+
+    public function gestion(){
+        Utils::isAdmin();
+
+        $gestion = true;
+        $pedido = new Pedido();
+        $pedidos = $pedido->getAll();
+
+        require_once 'views/pedido/misPedidos.php';
+    }
+
+    public function estado(){
+        Utils::isAdmin();
+
+        if(isset($_POST['pedido_id']) && isset($_POST['estado'])){
+            //tomar los datos del formulario
+            $id = $_POST['pedido_id'];
+            $estado = $_POST['estado'];
+
+            //actualizar estado
+            $pedido = new Pedido();
+            $pedido->setId($id);
+            $pedido->setEstado($estado);
+            $pedido->edit();
+
+            header("Location:".base_url."pedido/detalle&id=".$id);
+
+        }else{
+            header("Location:".base_url);
+        }
+    }
 }//final de la clase
