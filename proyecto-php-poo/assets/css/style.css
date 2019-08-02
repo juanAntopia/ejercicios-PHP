@@ -379,9 +379,36 @@ button{
 }
 
 /*Carrito*/
+.delete-carrito{
+    float: left;
+    width: 200px;
+}
+.button-delete{
+    display: block;
+    float: left;
+    width: 100px;
+}
+.updown-unidades{
+    width: 66px;
+    margin: 0px auto;
+}
+.updown-unidades .button{
+    width: 20px;
+    display: block;
+    float: left;
+    padding: 2px;
+    margin-right: 7px;
+}
+
+.button-carrito{
+    width: 70px;
+    margin: 0px auto;
+    text-align: center;
+}
+
 .total-carrito{
     float: right;
-    width: 305px;
+    width: 325px;
 }
 
 .total-carrito h3{
