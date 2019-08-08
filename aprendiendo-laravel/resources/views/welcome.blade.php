@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel Instalado 5.8
                 </div>
 
                 <div class="links">

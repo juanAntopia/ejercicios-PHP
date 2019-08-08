@@ -12,5 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo "<h1>Hola Mundo desde laravel</h1>";
 });
+
+/**
+ * GET: Conseguir datos
+ * POST: Guardar datos
+ * PUT: actualizar recursos
+ * DELETE: eliminar
+ */
+
+ Route::get('/mostrar-fecha', function(){
+     $titulo = "Estoy mostrando la fecha";
+    return view('mostrar-fecha', array(
+        'titulo' => $titulo
+    ));
+ });
