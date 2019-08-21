@@ -15,13 +15,22 @@ Route::get('/', function () {
     echo "<h1>Hola Mundo desde laravel</h1>";
 });
 
+Route::get('/peliculas/{pelicula?}', 'PeliculaController@index');
+Route::get('/detalle/{year?}',[
+    'middleware' => 'testyear',
+    'uses'=>'PeliculaController@detalle',
+    'as'=>'detalle.pelicula'
+    ]);
+
+Route::get('/redirigir', 'PeliculaController@redirigir');
+Route::resource('/usuario', 'UsuarioController');
 /**
  * GET: Conseguir datos
  * POST: Guardar datos
  * PUT: actualizar recursos
  * DELETE: eliminar
  */
-
+/*
  Route::get('/mostrar-fecha', function(){
     $titulo = "Estoy mostrando la fecha";
     return view('mostrar-fecha', array(
@@ -51,3 +60,5 @@ Route::get('/', function () {
  Route::get('/pagina-generica', function(){
     return view('pagina-generica');
  });
+
+ */
