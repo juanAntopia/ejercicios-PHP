@@ -11,8 +11,6 @@
 |
 */
 
-
-
 Route::get('/', function () {
     echo "<h1>Hola Mundo desde laravel</h1>";
 });
@@ -29,6 +27,18 @@ Route::get('/formulario', 'PeliculaController@formulario');
 Route::post('/recibir', 'PeliculaController@recibir');
 
 Route::resource('/usuario', 'UsuarioController');
+
+//rutas fruta
+Route::group(['prefix' => 'fruta'], function(){
+    Route::get('index', 'FrutaController@index');
+    Route::get('detail/{id}', 'FrutaController@detail');
+    Route::get('create', 'FrutaController@create');
+    Route::post('save', 'FrutaController@save');
+    Route::get('delete/{id}', 'FrutaController@delete');
+    Route::get('edit/{id}', 'FrutaController@edit');
+    Route::post('update', 'FrutaController@update');
+});
+
 /**
  * GET: Conseguir datos
  * POST: Guardar datos
