@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/01-selectores.js"></script>
+
+    <style>
+        .zebra{
+            border: 5px dashed black;
+        }
+
+        .grande{
+            font-size: 30px;
+        }
+
+        .margen-superior{
+            display: block;
+            margin-top: 30px;
+        }
+        .resaltado{
+            border-bottom: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <p>Ejercicios con jQuery</p>
+    <div id="rojo" class="sinBorder">Quiero ser rojo</div>
+    <div id="amarillo" class="sinBorder">Quiero ser amarillo</div>
+    <div id="verde" class="sinBorder">Quiero ser verde</div>
+
+    <hr>
+
+    <ul id="ul">
+        <li><a href="https://google.com" title="Google">Google</a></li>
+        <li><a href="https://facebook.com" title="Facebook" class="resaltado">Facebook</a></li>
+        <span class="resaltado">hey</span>
+    </ul>
+</body>
+</html>
